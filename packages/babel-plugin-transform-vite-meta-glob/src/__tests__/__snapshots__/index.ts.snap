@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vite-meta-env glob all files eagerly: glob all files eagerly 1`] = `
+
+const modules = import.meta.globEager("./fixtures/**/*")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const modules = {
+  './fixtures/file1.ts': require('./fixtures/file1.ts'),
+  './fixtures/file2.ts': require('./fixtures/file2.ts'),
+  './fixtures/file3.ts': require('./fixtures/file3.ts')
+}
+
+
+`;
+
+exports[`vite-meta-env glob all files: glob all files 1`] = `
+
+const modules = import.meta.glob("./fixtures/**/*")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const modules = {
+  './fixtures/file1.ts': () => import('./fixtures/file1.ts'),
+  './fixtures/file2.ts': () => import('./fixtures/file2.ts'),
+  './fixtures/file3.ts': () => import('./fixtures/file3.ts')
+}
+
+
+`;
+
+exports[`vite-meta-env glob no files eagerly: glob no files eagerly 1`] = `
+
+const modules = import.meta.globEager("./fixtures/**/not-found")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const modules = {}
+
+
+`;
+
+exports[`vite-meta-env glob no files: glob no files 1`] = `
+
+const modules = import.meta.glob("./fixtures/**/not-found")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const modules = {}
+
+
+`;
+
+exports[`vite-meta-env glob some files eagerly: glob some files eagerly 1`] = `
+
+const modules = import.meta.globEager("./fixtures/**/*{1,3}*")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const modules = {
+  './fixtures/file1.ts': require('./fixtures/file1.ts'),
+  './fixtures/file3.ts': require('./fixtures/file3.ts')
+}
+
+
+`;
+
+exports[`vite-meta-env glob some files: glob some files 1`] = `
+
+const modules = import.meta.glob("./fixtures/**/*{1,3}*")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const modules = {
+  './fixtures/file1.ts': () => import('./fixtures/file1.ts'),
+  './fixtures/file3.ts': () => import('./fixtures/file3.ts')
+}
+
+
+`;
+
+exports[`vite-meta-env not import.meta.glob: not import.meta.glob 1`] = `
+
+glob("./fixtures/**/*")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+glob('./fixtures/**/*')
+
+
+`;
+
+exports[`vite-meta-env not import.meta.globEager: not import.meta.globEager 1`] = `
+
+globEager("./fixtures/**/*")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+globEager('./fixtures/**/*')
+
+
+`;
+
+exports[`vite-meta-env not import.meta: not import.meta 1`] = `
+
+const x = import.meta.env
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = import.meta.env
+
+
+`;
