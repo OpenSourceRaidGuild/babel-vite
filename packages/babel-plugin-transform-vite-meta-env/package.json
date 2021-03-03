@@ -1,5 +1,5 @@
 {
-  "name": "babel-plugin-transform-vite-env",
+  "name": "babel-plugin-transform-vite-meta-env",
   "version": "1.0.0",
   "description": "babel preset and plugins that emulate vite's import.meta.env functionality",
   "main": "src/index.js",
@@ -17,6 +17,7 @@
     "vite",
     "plugin",
     "import",
+    "meta",
     "env"
   ],
   "author": "Michael Peyper <mpeyper7@gmail.com>",
