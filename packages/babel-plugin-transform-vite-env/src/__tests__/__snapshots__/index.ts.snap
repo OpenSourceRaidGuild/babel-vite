@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vite-meta-env not import.meta.env: not import.meta.env 1`] = `
+
+const x = process.env.MODE
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.MODE
+
+
+`;
+
+exports[`vite-meta-env not replaceable: not replaceable 1`] = `
+
+const x = import.meta.env.OTHER
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = undefined
+
+
+`;
+
+exports[`vite-meta-env replace DEV: replace DEV 1`] = `
+
+const x = import.meta.env.DEV
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.NODE_ENV !== 'production'
+
+
+`;
+
+exports[`vite-meta-env replace MODE: replace MODE 1`] = `
+
+const x = import.meta.env.MODE
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.NODE_ENV || 'test'
+
+
+`;
+
+exports[`vite-meta-env replace NODE_ENV: replace NODE_ENV 1`] = `
+
+const x = import.meta.env.NODE_ENV
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.NODE_ENV || 'test'
+
+
+`;
+
+exports[`vite-meta-env replace PROD: replace PROD 1`] = `
+
+const x = import.meta.env.PROD
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.NODE_ENV === 'production'
+
+
+`;
+
+exports[`vite-meta-env replace VITE_* variables: replace VITE_* variables 1`] = `
+
+const x = import.meta.env.VITE_VAR
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.VITE_VAR
+
+
+`;

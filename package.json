@@ -1,0 +1,36 @@
+{
+  "name": "babel-vite",
+  "description": "babel preset and plugins that emulate non-standard vite functionality",
+  "scripts": {
+    "setup": "npm install && npm run validate -s",
+    "postinstall": "lerna bootstrap",
+    "validate": "kcd-scripts validate",
+    "prepare": "npm run build",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "typecheck": "kcd-scripts typecheck",
+    "lint": "kcd-scripts lint",
+    "format": "kcd-scripts format",
+    "coverage": "codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenSourceRaidGuild/babel-vite.git"
+  },
+  "keywords": [
+    "babel",
+    "vite",
+    "preset",
+    "plugin"
+  ],
+  "author": "Michael Peyper <mpeyper7@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OpenSourceRaidGuild/babel-vite/issues"
+  },
+  "homepage": "https://github.com/OpenSourceRaidGuild/babel-vite#readme",
+  "devDependencies": {
+    "kcd-scripts": "^8.0.2",
+    "lerna": "^4.0.0"
+  }
+}

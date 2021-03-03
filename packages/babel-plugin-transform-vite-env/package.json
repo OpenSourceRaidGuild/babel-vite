@@ -1,0 +1,38 @@
+{
+  "name": "babel-plugin-transform-vite-env",
+  "version": "1.0.0",
+  "description": "babel preset and plugins that emulate vite's import.meta.env functionality",
+  "main": "src/index.js",
+  "typings": "src/index.d.ts",
+  "scripts": {
+    "build": "kcd-scripts build --out-dir lib",
+    "test": "kcd-scripts test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenSourceRaidGuild/babel-vite.git"
+  },
+  "keywords": [
+    "babel",
+    "vite",
+    "plugin",
+    "import",
+    "env"
+  ],
+  "author": "Michael Peyper <mpeyper7@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OpenSourceRaidGuild/babel-vite/issues"
+  },
+  "homepage": "https://github.com/OpenSourceRaidGuild/babel-vite#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@types/babel__core": "^7.1.12",
+    "babel-plugin-tester": "^10.0.0",
+    "kcd-scripts": "^8.0.2",
+    "typescript": "^4.2.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.13.9"
+  }
+}

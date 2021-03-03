@@ -1,0 +1,9 @@
+{
+    "extends": "kcd-scripts/eslint",
+    "rules": {
+      "max-lines-per-function": "off"
+    },
+    "parserOptions": {
+      "project": ["./tsconfig.json"]
+    }
+  }

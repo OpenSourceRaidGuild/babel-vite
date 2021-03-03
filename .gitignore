@@ -1,0 +1,11 @@
+# node
+node_modules
+
+# build generated
+lib
+
+# tests
+coverage
+
+# settings from IDE
+.vscode
