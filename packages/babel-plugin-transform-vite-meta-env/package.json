@@ -1,9 +1,9 @@
 {
   "name": "babel-plugin-transform-vite-meta-env",
   "version": "1.0.0",
-  "description": "babel preset and plugins that emulate vite's import.meta.env functionality",
-  "main": "src/index.js",
-  "typings": "src/index.d.ts",
+  "description": "babel plugin that emulates vite's import.meta.env functionality",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "scripts": {
     "build": "kcd-scripts build --out-dir lib",
     "test": "kcd-scripts test"

@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vite all: all 1`] = `
+
+export const envVar = import.meta.env.VITE_VAR
+
+export const modules = import.meta.glob('files/*.ts')
+
+export const eagerModules = import.meta.globEager('files/*.ts')
+
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export const envVar = process.env.VITE_VAR;
+export const modules = {
+  "files/file1.ts": () => import("files/file1.ts")
+};
+export const eagerModules = {
+  "files/file1.ts": require("files/file1.ts")
+};
+
+`;
+
+exports[`vite env-only: env-only 1`] = `
+
+export const envVar = import.meta.env.VITE_VAR
+
+export const modules = import.meta.glob('files/*.ts')
+
+export const eagerModules = import.meta.globEager('files/*.ts')
+
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export const envVar = process.env.VITE_VAR;
+export const modules = import.meta.glob('files/*.ts');
+export const eagerModules = import.meta.globEager('files/*.ts');
+
+`;
+
+exports[`vite glob-only: glob-only 1`] = `
+
+export const envVar = import.meta.env.VITE_VAR
+
+export const modules = import.meta.glob('files/*.ts')
+
+export const eagerModules = import.meta.globEager('files/*.ts')
+
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export const envVar = import.meta.env.VITE_VAR;
+export const modules = {
+  "files/file1.ts": () => import("files/file1.ts")
+};
+export const eagerModules = {
+  "files/file1.ts": require("files/file1.ts")
+};
+
+`;
+
+exports[`vite none: none 1`] = `
+
+export const envVar = import.meta.env.VITE_VAR
+
+export const modules = import.meta.glob('files/*.ts')
+
+export const eagerModules = import.meta.globEager('files/*.ts')
+
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export const envVar = process.env.VITE_VAR;
+export const modules = {
+  "files/file1.ts": () => import("files/file1.ts")
+};
+export const eagerModules = {
+  "files/file1.ts": require("files/file1.ts")
+};
+
+`;

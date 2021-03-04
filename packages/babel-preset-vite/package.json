@@ -1,7 +1,7 @@
 {
-  "name": "babel-plugin-transform-vite-meta-glob",
+  "name": "babel-preset-vite",
   "version": "1.0.0",
-  "description": "babel plugin that emulates vite's import.meta.glob import.meta.globEager functionality",
+  "description": "babel preset that emulates vite's non-standard functionality",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
@@ -15,11 +15,7 @@
   "keywords": [
     "babel",
     "vite",
-    "plugin",
-    "import",
-    "meta",
-    "glob",
-    "globEager"
+    "preset"
   ],
   "author": "Michael Peyper <mpeyper7@gmail.com>",
   "license": "MIT",
@@ -30,12 +26,14 @@
   "devDependencies": {
     "@babel/core": "^7.13.8",
     "@types/babel__core": "^7.1.12",
-    "@types/glob": "^7.1.3",
-    "babel-plugin-tester": "^10.0.0",
+    "@types/jest-in-case": "^1.0.3",
+    "jest-in-case": "^1.0.2",
     "kcd-scripts": "^8.0.2",
     "typescript": "^4.2.2"
   },
   "dependencies": {
-    "@babel/runtime": "^7.13.9"
+    "@babel/runtime": "^7.13.9",
+    "babel-plugin-transform-vite-meta-env": "^1.0.0",
+    "babel-plugin-transform-vite-meta-glob": "^1.0.0"
   }
 }

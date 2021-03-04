@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ESNext",
+    "types": ["vite/client", "node"],
+    "baseUrl": ".",
+    "paths": {
+      "*.ts": ["*"]
+    },
+    "strictNullChecks": true
+  }
+}

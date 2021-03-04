@@ -1,7 +1,8 @@
 {
-    "extends": "kcd-scripts/eslint",
+    "extends": "./node_modules/kcd-scripts/eslint",
     "rules": {
-      "max-lines-per-function": "off"
+      "max-lines-per-function": "off",
+      "import/no-extraneous-dependencies": "off"
     },
     "parserOptions": {
       "project": ["./tsconfig.json"]

@@ -1,5 +1,5 @@
-import type babelCore from '@babel/core'
 import nodePath from 'path'
+import type babelCore from '@babel/core'
 import glob from 'glob'
 
 export default function viteMetaGlobBabelPlugin({
@@ -42,10 +42,12 @@ export default function viteMetaGlobBabelPlugin({
           t.isStringLiteral(args[0])
         ) {
           const cwd = nodePath.dirname(sourceFile)
-          const paths = glob.sync(args[0].value, { cwd })
+          const globPaths = glob.sync(args[0].value, { cwd })
 
           const replacement = t.objectExpression(
-            paths.map((path) => t.objectProperty(t.stringLiteral(path), asts[propertyName](path)))
+            globPaths.map((globPath) =>
+              t.objectProperty(t.stringLiteral(globPath), asts[propertyName](globPath))
+            )
           )
 
           path.replaceWith(replacement)
