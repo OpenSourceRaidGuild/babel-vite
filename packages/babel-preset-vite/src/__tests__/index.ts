@@ -1,39 +1,22 @@
-import { promises as fs } from 'fs'
-import path from 'path'
-import cases from 'jest-in-case'
-import * as babel from '@babel/core'
-import preset from '..'
+import pluginTester from 'babel-plugin-tester'
+import preset, { VitePresetOptions } from '..'
 
-expect.addSnapshotSerializer({
-  test: (val: unknown) => typeof val === 'string',
-  print: (val: unknown) => val as string
+const fixture = (filename: string, options?: VitePresetOptions) => ({
+  fixture: require.resolve(`./fixtures/${filename}`),
+  babelOptions: {
+    presets: [options ? [preset, options] : preset]
+  }
 })
 
-cases(
-  'vite',
-  async ({ name, options }) => {
-    const fixturePath = path.join(__dirname, 'fixtures', name)
-    const inputFile = path.join(fixturePath, 'input.ts')
-    const input = await fs.readFile(inputFile, { encoding: 'utf8' })
-
-    const output = await babel.transformAsync(input, {
-      filename: inputFile,
-      presets: [options ? [preset, options] : preset]
-    })
-
-    const actual = output?.code ?? undefined
-
-    const formattedOutput = [input, '\n\n      ↓ ↓ ↓ ↓ ↓ ↓\n\n', fixLineEndings(actual)].join('')
-    expect(`\n${formattedOutput}\n`).toMatchSnapshot(name)
-  },
-  [
-    { name: 'all', options: { env: true, glob: true } },
-    { name: 'env-only', options: { env: true, glob: false } },
-    { name: 'glob-only', options: { env: false, glob: true } },
-    { name: 'none' }
-  ]
-)
-
-function fixLineEndings(string?: string) {
-  return string?.replace(/\r?\n/g, '\n').trim()
-}
+pluginTester({
+  plugin: () => ({}),
+  pluginName: 'vite',
+  snapshot: true,
+  babelOptions: {filename: __filename},
+  tests: {
+    'defaults': fixture('input'),
+    'all': fixture('input', { env: true, glob: true } ),
+    'env-only': fixture('input', { env: true, glob: false } ),
+    'glob-only': fixture('input', { env: false, glob: true } )
+  }
+})

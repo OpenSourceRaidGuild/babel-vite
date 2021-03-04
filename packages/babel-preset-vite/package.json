@@ -25,9 +25,9 @@
   "homepage": "https://github.com/OpenSourceRaidGuild/babel-vite#readme",
   "devDependencies": {
     "@babel/core": "^7.13.8",
+    "@types/babel-plugin-tester": "^9.0.1",
     "@types/babel__core": "^7.1.12",
-    "@types/jest-in-case": "^1.0.3",
-    "jest-in-case": "^1.0.2",
+    "babel-plugin-tester": "^10.0.0",
     "kcd-scripts": "^8.0.2",
     "typescript": "^4.2.2"
   },
