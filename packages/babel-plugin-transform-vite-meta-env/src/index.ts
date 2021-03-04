@@ -30,7 +30,7 @@ const REPLACE_VARS = [
 function getReplacement(
   variableName: string,
   template: typeof babelCore.template
-): babelCore.types.Expression | undefined {
+): babelCore.types.Expression {
   return REPLACE_VARS.filter(({ regex }) => regex.test(variableName)).map(({ replacement }) =>
     replacement(template, variableName)
   )[0]
@@ -60,9 +60,7 @@ export default function viteMetaEnvBabelPlugin({
 
         const replacement = getReplacement(variableName, template)
 
-        if (replacement) {
-          path.replaceWith(replacement)
-        }
+        path.replaceWith(replacement)
       }
     }
   }
