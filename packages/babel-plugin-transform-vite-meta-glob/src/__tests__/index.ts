@@ -13,8 +13,11 @@ pluginTester({
     'glob all files eagerly': 'const modules = import.meta.globEager("./fixtures/**/*")',
     'glob some files eagerly': 'const modules = import.meta.globEager("./fixtures/**/*{1,3}*")',
     'glob no files eagerly': 'const modules = import.meta.globEager("./fixtures/**/not-found")',
-    'not import.meta': 'const x = import.meta.env',
+    'not import.meta': 'const x = import.meta.other()',
+    'not import.meta function': 'const x = import.meta.env',
     'not import.meta.glob': 'glob("./fixtures/**/*")',
-    'not import.meta.globEager': 'globEager("./fixtures/**/*")'
+    'not import.meta.globEager': 'globEager("./fixtures/**/*")',
+    'not a string arg': 'globEager(1)',
+    'too many args': 'globEager("./fixtures/**/*1*", "./fixtures/**/*2*")'
   }
 })

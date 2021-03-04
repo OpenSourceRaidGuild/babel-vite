@@ -36,7 +36,6 @@ export default function viteMetaGlobBabelPlugin({
           return
         }
 
-        // istanbul ignore next because this should never happen, but TypeScript needs me to handle it
         if (
           isGlobKey(propertyName) &&
           t.isMetaProperty(callee.object) &&

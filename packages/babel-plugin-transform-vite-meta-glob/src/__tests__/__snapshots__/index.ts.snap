@@ -80,6 +80,28 @@ const modules = {
 
 `;
 
+exports[`vite-meta-env not a string arg: not a string arg 1`] = `
+
+globEager(1)
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+globEager(1)
+
+
+`;
+
+exports[`vite-meta-env not import.meta function: not import.meta function 1`] = `
+
+const x = import.meta.env
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = import.meta.env
+
+
+`;
+
 exports[`vite-meta-env not import.meta.glob: not import.meta.glob 1`] = `
 
 glob("./fixtures/**/*")
@@ -104,11 +126,22 @@ globEager('./fixtures/**/*')
 
 exports[`vite-meta-env not import.meta: not import.meta 1`] = `
 
-const x = import.meta.env
+const x = import.meta.other()
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const x = import.meta.env
+const x = import.meta.other()
+
+
+`;
+
+exports[`vite-meta-env too many args: too many args 1`] = `
+
+globEager("./fixtures/**/*1*", "./fixtures/**/*2*")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+globEager('./fixtures/**/*1*', './fixtures/**/*2*')
 
 
 `;
