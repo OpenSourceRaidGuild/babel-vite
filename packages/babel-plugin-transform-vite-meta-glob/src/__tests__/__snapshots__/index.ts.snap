@@ -80,6 +80,17 @@ const modules = {
 
 `;
 
+exports[`vite-meta-env no filename: no filename 1`] = `
+
+import.meta.glob("./fixtures/**/*")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import.meta.glob('./fixtures/**/*')
+
+
+`;
+
 exports[`vite-meta-env not a string arg: not a string arg 1`] = `
 
 globEager(1)

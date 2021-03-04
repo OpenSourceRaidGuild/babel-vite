@@ -5,7 +5,6 @@ pluginTester({
     plugin,
     pluginName: 'vite-meta-env',
     snapshot: true,
-    babelOptions: {filename: __filename},
     tests: {
       'replace MODE': 'const x = import.meta.env.MODE',
       'replace NODE_ENV': 'const x = import.meta.env.NODE_ENV',

@@ -31,7 +31,6 @@ export default function viteMetaGlobBabelPlugin({
         const sourceFile = state.file.opts.filename
         const propertyName = t.isIdentifier(callee.property) && callee.property.name
 
-        // istanbul ignore next because this should never happen, but TypeScript needs me to handle it
         if (!sourceFile || !propertyName) {
           return
         }
