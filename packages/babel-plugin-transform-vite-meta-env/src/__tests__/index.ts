@@ -7,6 +7,7 @@ pluginTester({
     snapshot: true,
     tests: {
       'replace MODE': 'const x = import.meta.env.MODE',
+      'replace BASE_URL': 'const x = import.meta.env.BASE_URL',
       'replace NODE_ENV': 'const x = import.meta.env.NODE_ENV',
       'replace DEV': 'const x = import.meta.env.DEV',
       'replace PROD': 'const x = import.meta.env.PROD',

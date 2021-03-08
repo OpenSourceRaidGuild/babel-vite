@@ -12,6 +12,11 @@ const REPLACE_VARS = [
       template.expression.ast("process.env.NODE_ENV || 'test'")
   },
   {
+    regex: /^BASE_URL$/,
+    replacement: (template: typeof babelCore.template) =>
+      template.expression.ast("'/'")
+  },
+  {
     regex: /^DEV$/,
     replacement: (template: typeof babelCore.template) =>
       template.expression.ast("process.env.NODE_ENV !== 'production'")

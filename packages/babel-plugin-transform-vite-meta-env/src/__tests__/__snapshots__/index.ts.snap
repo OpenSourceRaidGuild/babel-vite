@@ -22,6 +22,17 @@ const x = undefined
 
 `;
 
+exports[`vite-meta-env replace BASE_URL: replace BASE_URL 1`] = `
+
+const x = import.meta.env.BASE_URL
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = '/'
+
+
+`;
+
 exports[`vite-meta-env replace DEV: replace DEV 1`] = `
 
 const x = import.meta.env.DEV
