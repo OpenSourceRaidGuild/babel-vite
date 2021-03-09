@@ -4,6 +4,10 @@
   "description": "babel plugin that emulates vite's import.meta.glob import.meta.globEager functionality",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
     "build": "kcd-scripts build --out-dir lib",
     "test": "kcd-scripts test"

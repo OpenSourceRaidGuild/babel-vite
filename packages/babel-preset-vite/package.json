@@ -4,6 +4,10 @@
   "description": "babel preset that emulates vite's non-standard functionality",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
     "build": "kcd-scripts build --out-dir lib",
     "test": "kcd-scripts test"
