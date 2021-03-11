@@ -30,13 +30,13 @@
   "devDependencies": {
     "@babel/core": "^7.13.8",
     "@types/babel-plugin-tester": "^9.0.1",
-    "@types/babel__core": "^7.1.12",
     "babel-plugin-tester": "^10.0.0",
     "kcd-scripts": "^8.0.2",
     "typescript": "^4.2.2"
   },
   "dependencies": {
     "@babel/runtime": "^7.13.9",
+    "@types/babel__core": "^7.1.12",
     "babel-plugin-transform-vite-meta-env": "^0.0.0-semantically-released",
     "babel-plugin-transform-vite-meta-glob": "^0.0.0-semantically-released"
   }
