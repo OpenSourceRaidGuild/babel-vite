@@ -46,7 +46,7 @@ Without options:
 
 With options:
 
-```json
+```jsonc
 {
   "presets": [
     [
@@ -83,7 +83,7 @@ require('@babel/core').transformSync('code', {
 Toggles whether or not to perform
 [`import.meta.env`](https://vitejs.dev/guide/env-and-mode.html#env-variables) transformations.
 
-### `env`
+### `glob`
 
 `boolean`, defaults to `true`
 
