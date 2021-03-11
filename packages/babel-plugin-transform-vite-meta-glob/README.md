@@ -3,6 +3,7 @@
 <!-- prettier-ignore-start -->
 [![Build Status](https://img.shields.io/github/workflow/status/OpenSourceRaidGuild/babel-vite/validate?logo=github&style=flat-square)](https://github.com/OpenSourceRaidGuild/babel-vite/actions?query=workflow%3Avalidate)
 [![codecov](https://img.shields.io/codecov/c/github/OpenSourceRaidGuild/babel-vite.svg?style=flat-square)](https://codecov.io/gh/OpenSourceRaidGuild/babel-vite)
+[![version](https://img.shields.io/npm/v/babel-plugin-transform-vite-meta-glob.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-transform-vite-meta-glob)
 [![downloads](https://img.shields.io/npm/dm/babel-plugin-transform-vite-meta-glob.svg?style=flat-square)](http://www.npmtrends.com/babel-plugin-transform-vite-meta-glob)
 [![MIT License](https://img.shields.io/npm/l/babel-plugin-transform-vite-meta-glob.svg?style=flat-square)](https://github.com/OpenSourceRaidGuild/babel-vite/blob/master/LICENSE.md)
 
