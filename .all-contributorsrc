@@ -47,6 +47,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "mitchelvanbever",
+      "name": "Mitchel van Bever",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10127707?v=4",
+      "profile": "https://github.com/mitchelvanbever",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7
