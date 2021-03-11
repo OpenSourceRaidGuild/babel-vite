@@ -43,7 +43,7 @@ jobs:
     needs: main
     runs-on: ubuntu-latest
     if:
-      ${{ github.repository == 'testing-library/react-hooks-testing-library' &&
+      ${{ github.repository == 'OpenSourceRaidGuild/babel-vite' &&
       contains('refs/heads/main,refs/heads/beta,refs/heads/next,refs/heads/alpha',
       github.ref) && github.event_name == 'push' }}
     steps:
