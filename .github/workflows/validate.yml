@@ -11,9 +11,6 @@ jobs:
   main:
     # ignore all-contributors PRs
     if: ${{ !contains(github.head_ref, 'all-contributors') }}
-    strategy:
-      matrix:
-        node: [14, 15]
     runs-on: ubuntu-latest
     steps:
       - name: 🛑 Cancel Previous Runs
@@ -27,7 +24,7 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 15
 
       - name: 📥 Download deps
         uses: bahmutov/npm-install@v1
