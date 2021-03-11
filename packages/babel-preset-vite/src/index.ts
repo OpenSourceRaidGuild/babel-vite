@@ -5,7 +5,10 @@ export interface VitePresetOptions {
   glob?: boolean
 }
 
-function vitePreset(_: typeof babelCore, opts: VitePresetOptions): { plugins: babelCore.PluginItem[] } {
+function vitePreset(
+  _: typeof babelCore,
+  opts: VitePresetOptions
+): { plugins: babelCore.PluginItem[] } {
   const { env = true, glob = true } = opts
   return {
     plugins: [

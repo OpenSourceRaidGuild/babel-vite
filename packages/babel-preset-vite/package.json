@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-vite",
-  "version": "1.0.0",
+  "version": "0.0.0-semantically-released",
   "description": "babel preset that emulates vite's non-standard functionality",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -8,10 +8,6 @@
     "lib",
     "src"
   ],
-  "scripts": {
-    "build": "kcd-scripts build --out-dir lib",
-    "test": "kcd-scripts test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OpenSourceRaidGuild/babel-vite.git"
@@ -27,6 +23,10 @@
     "url": "https://github.com/OpenSourceRaidGuild/babel-vite/issues"
   },
   "homepage": "https://github.com/OpenSourceRaidGuild/babel-vite#readme",
+  "scripts": {
+    "build": "kcd-scripts build --out-dir lib",
+    "test": "kcd-scripts test"
+  },
   "devDependencies": {
     "@babel/core": "^7.13.8",
     "@types/babel-plugin-tester": "^9.0.1",
@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.13.9",
-    "babel-plugin-transform-vite-meta-env": "^1.0.0",
-    "babel-plugin-transform-vite-meta-glob": "^1.0.0"
+    "babel-plugin-transform-vite-meta-env": "^0.0.0-semantically-released",
+    "babel-plugin-transform-vite-meta-glob": "^0.0.0-semantically-released"
   }
 }

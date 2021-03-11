@@ -13,8 +13,7 @@ const REPLACE_VARS = [
   },
   {
     regex: /^BASE_URL$/,
-    replacement: (template: typeof babelCore.template) =>
-      template.expression.ast("'/'")
+    replacement: (template: typeof babelCore.template) => template.expression.ast("'/'")
   },
   {
     regex: /^DEV$/,

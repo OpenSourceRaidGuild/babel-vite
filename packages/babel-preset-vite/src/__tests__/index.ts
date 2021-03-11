@@ -12,11 +12,11 @@ pluginTester({
   plugin: () => ({}),
   pluginName: 'vite',
   snapshot: true,
-  babelOptions: {filename: __filename},
+  babelOptions: { filename: __filename },
   tests: {
-    'defaults': fixture('input'),
-    'all': fixture('input', { env: true, glob: true } ),
-    'env-only': fixture('input', { env: true, glob: false } ),
-    'glob-only': fixture('input', { env: false, glob: true } )
+    defaults: fixture('input'),
+    all: fixture('input', { env: true, glob: true }),
+    'env-only': fixture('input', { env: true, glob: false }),
+    'glob-only': fixture('input', { env: false, glob: true })
   }
 })

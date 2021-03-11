@@ -29,7 +29,6 @@ Please make sure to run the tests before you commit your changes. You can do so 
 
 ## Help needed
 
-Please check out the
-[the open issues](https://github.com/OpenSourceRaidGuild/babel-vite/issues).
+Please check out the [the open issues](https://github.com/OpenSourceRaidGuild/babel-vite/issues).
 
 Also, please watch the repo and respond to questions/bug reports/feature requests! Thanks!

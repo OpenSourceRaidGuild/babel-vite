@@ -57,7 +57,7 @@ babel --plugins babel-plugin-transform-vite-meta-env script.js
 ### Via Node API
 
 ```javascript
-require("@babel/core").transformSync("code", {
-  plugins: ["babel-plugin-transform-vite-meta-env"]
-});
+require('@babel/core').transformSync('code', {
+  plugins: ['babel-plugin-transform-vite-meta-env']
+})
 ```

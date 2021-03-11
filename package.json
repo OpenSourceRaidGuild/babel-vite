@@ -1,18 +1,6 @@
 {
   "name": "babel-vite",
   "description": "babel preset and plugins that emulate vite's non-standard functionality",
-  "scripts": {
-    "setup": "npm install && npm run validate -s",
-    "postinstall": "lerna bootstrap",
-    "validate": "kcd-scripts validate",
-    "prepare": "npm run build",
-    "build": "lerna run build",
-    "test": "lerna run test -- -- --coverage",
-    "typecheck": "kcd-scripts typecheck",
-    "lint": "kcd-scripts lint",
-    "format": "kcd-scripts format",
-    "coverage": "codecov"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OpenSourceRaidGuild/babel-vite.git"
@@ -29,9 +17,50 @@
     "url": "https://github.com/OpenSourceRaidGuild/babel-vite/issues"
   },
   "homepage": "https://github.com/OpenSourceRaidGuild/babel-vite#readme",
+  "workspaces": [
+    "packages/*"
+  ],
+  "lint-staged": {
+    "*.+(js|jsx|json|ts|tsx|md)": [
+      "npm run format",
+      "npm run lint",
+      "npm run test"
+    ]
+  },
+  "release": {
+    "branches": [
+      "main",
+      {
+        "name": "alpha",
+        "prerelease": true
+      },
+      {
+        "name": "beta",
+        "prerelease": true
+      }
+    ]
+  },
+  "scripts": {
+    "setup": "npm install && npm run validate -s",
+    "postinstall": "npm run build",
+    "validate": "kcd-scripts validate",
+    "prepare": "npm run build",
+    "build": "run-p --aggregate-output build:**",
+    "build:babel-plugin-transform-vite-meta-env": "npm run build --prefix packages/babel-plugin-transform-vite-meta-env",
+    "build:babel-plugin-transform-vite-meta-glob": "npm run build --prefix packages/babel-plugin-transform-vite-meta-glob",
+    "build:babel-preset-vite": "npm run build --prefix packages/babel-preset-vite",
+    "test": "run-p --aggregate-output test:** --",
+    "test:babel-plugin-transform-vite-meta-env": "npm run test --prefix packages/babel-plugin-transform-vite-meta-env -- --coverage",
+    "test:babel-plugin-transform-vite-meta-glob": "npm run test --prefix packages/babel-plugin-transform-vite-meta-glob -- --coverage",
+    "test:babel-preset-vite": "npm run test --prefix packages/babel-preset-vite -- --coverage",
+    "typecheck": "kcd-scripts typecheck",
+    "lint": "kcd-scripts lint",
+    "format": "kcd-scripts format"
+  },
   "devDependencies": {
     "kcd-scripts": "^8.0.2",
-    "lerna": "^4.0.0",
+    "multi-semantic-release": "^2.8.0",
+    "npm-run-all": "^4.1.5",
     "typescript": "^4.2.2",
     "vite": "^2.0.5"
   }

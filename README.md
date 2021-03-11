@@ -12,7 +12,7 @@ This repo includes the following presets and plugins:
   - [babel-plugin-transform-vite-meta-env](./packages/babel-plugin-transform-vite-meta-env)
   - [babel-plugin-transform-vite-meta-glob](./packages/babel-plugin-transform-vite-meta-glob)
 
-For installation, usage and example, please refer to the documentation in the above packages. 
+For installation, usage and example, please refer to the documentation in the above packages.
 
 ## Contributors ✨
 
@@ -35,7 +35,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors)
+specification. Contributions of any kind welcome!
 
 ## Issues
 
@@ -59,8 +60,8 @@ maintainers prioritize what to work on.
 ### ❓ Questions
 
 For questions related to using the library, you can
-[raise issue here](https://github.com/OpenSourceRaidGuild/babel-vite/issues/new), or
-visit a support community:
+[raise issue here](https://github.com/OpenSourceRaidGuild/babel-vite/issues/new), or visit a support
+community:
 
 - [Discord](https://discord.gg/grS89HWeYh)
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/babeljs+or+vitejs+or+babel-vite)
