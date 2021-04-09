@@ -1,6 +1,6 @@
 import type babelCore from '@babel/core'
 
-const REPLACE_VARS = [
+const replaceVars = [
   {
     regex: /^VITE_/,
     replacement: (template: typeof babelCore.template, variableName: string) =>
@@ -24,20 +24,26 @@ const REPLACE_VARS = [
     regex: /^PROD$/,
     replacement: (template: typeof babelCore.template) =>
       template.expression.ast("process.env.NODE_ENV === 'production'")
-  },
-  {
-    regex: /.*/,
-    replacement: (template: typeof babelCore.template) => template.expression.ast('undefined')
   }
 ]
+
+const replaceEnv = (template: typeof babelCore.template) =>
+  template.expression.ast(`{
+    ...Object.fromEntries(Object.entries(process.env).filter(([k]) => /^VITE_/.test(k))),
+    NODE_ENV: process.env.NODE_ENV || 'test',
+    MODE: process.env.NODE_ENV || 'test',
+    BASE_URL: '/',
+    DEV: process.env.NODE_ENV !== 'production',
+    PROD: process.env.NODE_ENV === 'production'
+  }`)
 
 function getReplacement(
   variableName: string,
   template: typeof babelCore.template
-): babelCore.types.Expression {
-  return REPLACE_VARS.filter(({ regex }) => regex.test(variableName)).map(({ replacement }) =>
-    replacement(template, variableName)
-  )[0]
+): babelCore.types.Expression | undefined {
+  return replaceVars
+    .filter(({ regex }) => regex.test(variableName))
+    .map(({ replacement }) => replacement(template, variableName))[0]
 }
 
 export default function viteMetaEnvBabelPlugin({
@@ -64,7 +70,12 @@ export default function viteMetaEnvBabelPlugin({
 
         const replacement = getReplacement(variableName, template)
 
-        path.replaceWith(replacement)
+        if (replacement) {
+          path.replaceWith(replacement)
+        }
+      },
+      MetaProperty(path) {
+        path.parentPath.replaceWith(replaceEnv(template))
       }
     }
   }

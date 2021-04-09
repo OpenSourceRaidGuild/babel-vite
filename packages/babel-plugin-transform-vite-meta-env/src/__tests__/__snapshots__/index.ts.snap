@@ -17,7 +17,14 @@ const x = import.meta.env.OTHER
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-const x = undefined
+const x = {
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => /^VITE_/.test(k))),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}.OTHER
 
 
 `;
@@ -84,6 +91,61 @@ const x = import.meta.env.VITE_VAR
       ↓ ↓ ↓ ↓ ↓ ↓
 
 const x = process.env.VITE_VAR
+
+
+`;
+
+exports[`vite-meta-env replace env object: replace env object 1`] = `
+
+const env = import.meta.env
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const env = {
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => /^VITE_/.test(k))),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}
+
+
+`;
+
+exports[`vite-meta-env replace key access: replace key access 1`] = `
+
+const key = "VITE_VAR"; const x = import.meta.env[key]
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const key = 'VITE_VAR'
+const x = {
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => /^VITE_/.test(k))),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}[key]
+
+
+`;
+
+exports[`vite-meta-env replace string access: replace string access 1`] = `
+
+const x = import.meta.env["VITE_VAR"]
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = {
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => /^VITE_/.test(k))),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}['VITE_VAR']
 
 
 `;

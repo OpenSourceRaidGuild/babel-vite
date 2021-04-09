@@ -12,6 +12,9 @@ pluginTester({
     'replace DEV': 'const x = import.meta.env.DEV',
     'replace PROD': 'const x = import.meta.env.PROD',
     'replace VITE_* variables': 'const x = import.meta.env.VITE_VAR',
+    'replace string access': 'const x = import.meta.env["VITE_VAR"]',
+    'replace key access': 'const key = "VITE_VAR"; const x = import.meta.env[key]',
+    'replace env object': 'const env = import.meta.env',
     'not replaceable': 'const x = import.meta.env.OTHER',
     'not import.meta.env': 'const x = process.env.MODE'
   }
