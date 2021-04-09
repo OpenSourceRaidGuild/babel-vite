@@ -75,6 +75,18 @@ export default function viteMetaEnvBabelPlugin({
         }
       },
       MetaProperty(path) {
+        const envNode = t.isMemberExpression(path.parentPath.node) && path.parentPath.node
+
+        if (!envNode) {
+          return
+        }
+
+        const isEnvVar = t.isIdentifier(envNode.property) && envNode.property.name === 'env'
+
+        if (!isEnvVar) {
+          return
+        }
+
         path.parentPath.replaceWith(replaceEnv(template))
       }
     }

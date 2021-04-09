@@ -1,6 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`vite-meta-env not import.meta lookup: not import.meta lookup 1`] = `
+
+const x = import.meta()
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = import.meta()
+
+
+`;
+
 exports[`vite-meta-env not import.meta.env: not import.meta.env 1`] = `
+
+const x = import.meta.other
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = import.meta.other
+
+
+`;
+
+exports[`vite-meta-env not import.meta: not import.meta 1`] = `
 
 const x = process.env.MODE
 

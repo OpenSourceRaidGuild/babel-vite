@@ -16,6 +16,8 @@ pluginTester({
     'replace key access': 'const key = "VITE_VAR"; const x = import.meta.env[key]',
     'replace env object': 'const env = import.meta.env',
     'not replaceable': 'const x = import.meta.env.OTHER',
-    'not import.meta.env': 'const x = process.env.MODE'
+    'not import.meta.env': 'const x = import.meta.other',
+    'not import.meta': 'const x = process.env.MODE',
+    'not import.meta lookup': 'const x = import.meta()'
   }
 })
