@@ -34,6 +34,7 @@ const dev = import.meta.env.DEV;
 const prod = import.meta.env.PROD;
 const viteVar = import.meta.env.VITE_VAR;
 const other = import.meta.env.OTHER;
+const env = import.meta.env;
 ```
 
 **Out**
@@ -45,7 +46,22 @@ const nodeEnv = process.env.NODE_ENV || 'test';
 const dev = process.env.NODE_ENV !== 'production';
 const prod = process.env.NODE_ENV === 'production';
 const viteVar = process.env.VITE_VAR;
-const other = undefined;
+const other = {
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => /^VITE_/.test(k))),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}.OTHER;
+const env = {
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => /^VITE_/.test(k))),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+};
 ```
 
 ## Installation
