@@ -44,7 +44,7 @@ const baseUrl = '/';
 const nodeEnv = process.env.NODE_ENV || 'test';
 const dev = process.env.NODE_ENV !== 'production';
 const prod = process.env.NODE_ENV === 'production';
-const viteVar = process.env.env.VITE_VAR;
+const viteVar = process.env.VITE_VAR;
 const other = undefined;
 ```
 
