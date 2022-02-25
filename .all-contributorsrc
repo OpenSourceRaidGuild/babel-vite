@@ -56,6 +56,17 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "andrew-kramm",
+      "name": "Andrew Kramm",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11050299?v=4",
+      "profile": "https://github.com/andrew-kramm",
+      "contributions": [
+        "code",
+        "test",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
