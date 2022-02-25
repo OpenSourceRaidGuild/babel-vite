@@ -74,11 +74,28 @@ npm install --save-dev babel-plugin-transform-vite-meta-env
 
 ### With a configuration file (Recommended)
 
+The plugin defaults to transforming environmental variables prefixed with `VITE_`.
+
 ```json
 {
   "plugins": ["babel-plugin-transform-vite-meta-env"]
 }
 ```
+
+The plugin may also be configured to transforming environmental variables with a custom prefix.
+
+```json
+{
+  "plugins": [    
+    [
+      "babel-plugin-transform-vite-meta-env", 
+      { "prefix": "REACT_APP_" }
+    ]
+  ]
+}
+```
+
+**Note**: If an empty string is supplied, all environmental variables will be transformed.
 
 ### Via CLI
 

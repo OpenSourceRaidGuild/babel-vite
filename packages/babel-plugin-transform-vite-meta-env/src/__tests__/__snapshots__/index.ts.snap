@@ -1,5 +1,195 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`vite-meta-env custom prefix not import.meta lookup: custom prefix not import.meta lookup 1`] = `
+
+const x = import.meta()
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = import.meta()
+
+
+`;
+
+exports[`vite-meta-env custom prefix not import.meta.env: custom prefix not import.meta.env 1`] = `
+
+const x = import.meta.other
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = import.meta.other
+
+
+`;
+
+exports[`vite-meta-env custom prefix not import.meta: custom prefix not import.meta 1`] = `
+
+const x = process.env.MODE
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.MODE
+
+
+`;
+
+exports[`vite-meta-env custom prefix not replaceable VITE_: custom prefix not replaceable VITE_ 1`] = `
+
+const x = import.meta.env.VITE_VAR
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = {
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_'))),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}.VITE_VAR
+
+
+`;
+
+exports[`vite-meta-env custom prefix not replaceable: custom prefix not replaceable 1`] = `
+
+const x = import.meta.env.OTHER
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = {
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_'))),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}.OTHER
+
+
+`;
+
+exports[`vite-meta-env custom prefix replace BASE_URL: custom prefix replace BASE_URL 1`] = `
+
+const x = import.meta.env.BASE_URL
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = '/'
+
+
+`;
+
+exports[`vite-meta-env custom prefix replace DEV: custom prefix replace DEV 1`] = `
+
+const x = import.meta.env.DEV
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.NODE_ENV !== 'production'
+
+
+`;
+
+exports[`vite-meta-env custom prefix replace MODE: custom prefix replace MODE 1`] = `
+
+const x = import.meta.env.MODE
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.NODE_ENV || 'test'
+
+
+`;
+
+exports[`vite-meta-env custom prefix replace NODE_ENV: custom prefix replace NODE_ENV 1`] = `
+
+const x = import.meta.env.NODE_ENV
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.NODE_ENV || 'test'
+
+
+`;
+
+exports[`vite-meta-env custom prefix replace PROD: custom prefix replace PROD 1`] = `
+
+const x = import.meta.env.PROD
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.NODE_ENV === 'production'
+
+
+`;
+
+exports[`vite-meta-env custom prefix replace TEST_PREFIX_* variables: custom prefix replace TEST_PREFIX_* variables 1`] = `
+
+const x = import.meta.env.TEST_PREFIX_VAR
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.TEST_PREFIX_VAR
+
+
+`;
+
+exports[`vite-meta-env custom prefix replace env object: custom prefix replace env object 1`] = `
+
+const env = import.meta.env
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const env = {
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_'))),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}
+
+
+`;
+
+exports[`vite-meta-env custom prefix replace key access: custom prefix replace key access 1`] = `
+
+const key = "TEST_PREFIX_VAR"; const x = import.meta.env[key]
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const key = 'TEST_PREFIX_VAR'
+const x = {
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_'))),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}[key]
+
+
+`;
+
+exports[`vite-meta-env custom prefix replace string access: custom prefix replace string access 1`] = `
+
+const x = import.meta.env["TEST_PREFIX_VAR"]
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = {
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_'))),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}['TEST_PREFIX_VAR']
+
+
+`;
+
 exports[`vite-meta-env not import.meta lookup: not import.meta lookup 1`] = `
 
 const x = import.meta()
@@ -40,7 +230,7 @@ const x = import.meta.env.OTHER
       ↓ ↓ ↓ ↓ ↓ ↓
 
 const x = {
-  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => /^VITE_/.test(k))),
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => k.startsWith('VITE_'))),
   NODE_ENV: process.env.NODE_ENV || 'test',
   MODE: process.env.NODE_ENV || 'test',
   BASE_URL: '/',
@@ -124,7 +314,7 @@ const env = import.meta.env
       ↓ ↓ ↓ ↓ ↓ ↓
 
 const env = {
-  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => /^VITE_/.test(k))),
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => k.startsWith('VITE_'))),
   NODE_ENV: process.env.NODE_ENV || 'test',
   MODE: process.env.NODE_ENV || 'test',
   BASE_URL: '/',
@@ -143,7 +333,7 @@ const key = "VITE_VAR"; const x = import.meta.env[key]
 
 const key = 'VITE_VAR'
 const x = {
-  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => /^VITE_/.test(k))),
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => k.startsWith('VITE_'))),
   NODE_ENV: process.env.NODE_ENV || 'test',
   MODE: process.env.NODE_ENV || 'test',
   BASE_URL: '/',
@@ -161,7 +351,7 @@ const x = import.meta.env["VITE_VAR"]
       ↓ ↓ ↓ ↓ ↓ ↓
 
 const x = {
-  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => /^VITE_/.test(k))),
+  ...Object.fromEntries(Object.entries(process.env).filter(([k]) => k.startsWith('VITE_'))),
   NODE_ENV: process.env.NODE_ENV || 'test',
   MODE: process.env.NODE_ENV || 'test',
   BASE_URL: '/',
