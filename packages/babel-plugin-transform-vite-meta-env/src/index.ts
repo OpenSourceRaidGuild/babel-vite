@@ -24,29 +24,44 @@ const replaceVars = [
   }
 ]
 
-const getPrefix = (opts: { prefix?: unknown }): string =>
-  typeof opts.prefix === 'string' ? opts.prefix : defaultPrefix
+const getPrefixes = ({ prefix }: { prefix?: unknown }): string[] => {
+  if (typeof prefix === 'string') {
+    return [prefix]
+  }
+  if (Array.isArray(prefix)) {
+    return prefix.map((val) => `${val}`)
+  }
+  return [defaultPrefix]
+}
 
-const replaceEnv = (template: typeof babelCore.template, prefix: string) =>
-  template.expression.ast(`{
-    ...Object.fromEntries(Object.entries(process.env).filter(([k]) => k.startsWith('${prefix}'))),
+const replaceEnv = (template: typeof babelCore.template, prefixes: string[]) => {
+  const propertyMatches = prefixes
+    .map(
+      (prefix) =>
+        `...Object.fromEntries(Object.entries(process.env).filter(([k]) => k.startsWith('${prefix}'))),`
+    )
+    .join('\n')
+
+  return template.expression.ast(`{
+    ${propertyMatches}
     NODE_ENV: process.env.NODE_ENV || 'test',
     MODE: process.env.NODE_ENV || 'test',
     BASE_URL: '/',
     DEV: process.env.NODE_ENV !== 'production',
     PROD: process.env.NODE_ENV === 'production'
   }`)
+}
 
 function getReplacement(
   variableName: string,
   template: typeof babelCore.template,
-  prefix: string
+  prefixes: string[]
 ): babelCore.types.Expression | undefined {
   return (
     replaceVars
       .filter(({ regex }) => regex.test(variableName))
       .map(({ replacement }) => replacement(template))[0] ??
-    (variableName.startsWith(prefix)
+    (prefixes.some((prefix) => variableName.startsWith(prefix))
       ? template.expression('process.env.%%variableName%%')({ variableName })
       : undefined)
   )
@@ -74,7 +89,7 @@ export default function viteMetaEnvBabelPlugin({
           return
         }
 
-        const replacement = getReplacement(variableName, template, getPrefix(opts))
+        const replacement = getReplacement(variableName, template, getPrefixes(opts))
 
         if (replacement) {
           path.replaceWith(replacement)
@@ -93,7 +108,7 @@ export default function viteMetaEnvBabelPlugin({
           return
         }
 
-        path.parentPath.replaceWith(replaceEnv(template, getPrefix(opts)))
+        path.parentPath.replaceWith(replaceEnv(template, getPrefixes(opts)))
       }
     }
   }

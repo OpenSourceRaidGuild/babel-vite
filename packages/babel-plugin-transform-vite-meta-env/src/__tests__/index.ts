@@ -47,3 +47,34 @@ pluginTester({
     'custom prefix not import.meta lookup': 'const x = import.meta()'
   }
 })
+
+pluginTester({
+  plugin,
+  pluginName: 'vite-meta-env',
+  pluginOptions: {
+    prefix: ['TEST_PREFIX_A_', 'TEST_PREFIX_B_']
+  },
+  snapshot: true,
+  tests: {
+    'multiple custom prefix replace MODE': 'const x = import.meta.env.MODE',
+    'multiple custom prefix replace BASE_URL': 'const x = import.meta.env.BASE_URL',
+    'multiple custom prefix replace NODE_ENV': 'const x = import.meta.env.NODE_ENV',
+    'multiple custom prefix replace DEV': 'const x = import.meta.env.DEV',
+    'multiple custom prefix replace PROD': 'const x = import.meta.env.PROD',
+    'multiple custom prefix replace TEST_PREFIX_A_* variables':
+      'const x = import.meta.env.TEST_PREFIX_A_VAR',
+    'multiple custom prefix replace TEST_PREFIX_B_* variables':
+      'const x = import.meta.env.TEST_PREFIX_B_VAR',
+    'multiple custom prefix replace string access': 'const x = import.meta.env["TEST_PREFIX_A"]',
+    'multiple custom prefix replace key access A':
+      'const key = "TEST_PREFIX_A_VAR"; const x = import.meta.env[key]',
+    'multiple custom prefix replace key access B':
+      'const key = "TEST_PREFIX_B_VAR"; const x = import.meta.env[key]',
+    'multiple custom prefix replace env object': 'const env = import.meta.env',
+    'multiple custom prefix not replaceable': 'const x = import.meta.env.OTHER',
+    'multiple custom prefix not replaceable VITE_': 'const x = import.meta.env.VITE_VAR',
+    'multiple custom prefix not import.meta.env': 'const x = import.meta.other',
+    'multiple custom prefix not import.meta': 'const x = process.env.MODE',
+    'multiple custom prefix not import.meta lookup': 'const x = import.meta()'
+  }
+})

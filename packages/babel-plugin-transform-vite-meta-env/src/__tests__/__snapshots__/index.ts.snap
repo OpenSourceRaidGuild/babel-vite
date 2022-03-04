@@ -190,6 +190,256 @@ const x = {
 
 `;
 
+exports[`vite-meta-env multiple custom prefix not import.meta lookup: multiple custom prefix not import.meta lookup 1`] = `
+
+const x = import.meta()
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = import.meta()
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix not import.meta.env: multiple custom prefix not import.meta.env 1`] = `
+
+const x = import.meta.other
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = import.meta.other
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix not import.meta: multiple custom prefix not import.meta 1`] = `
+
+const x = process.env.MODE
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.MODE
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix not replaceable VITE_: multiple custom prefix not replaceable VITE_ 1`] = `
+
+const x = import.meta.env.VITE_VAR
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = {
+  ...Object.fromEntries(
+    Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_A_'))
+  ),
+  ...Object.fromEntries(
+    Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_B_'))
+  ),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}.VITE_VAR
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix not replaceable: multiple custom prefix not replaceable 1`] = `
+
+const x = import.meta.env.OTHER
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = {
+  ...Object.fromEntries(
+    Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_A_'))
+  ),
+  ...Object.fromEntries(
+    Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_B_'))
+  ),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}.OTHER
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix replace BASE_URL: multiple custom prefix replace BASE_URL 1`] = `
+
+const x = import.meta.env.BASE_URL
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = '/'
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix replace DEV: multiple custom prefix replace DEV 1`] = `
+
+const x = import.meta.env.DEV
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.NODE_ENV !== 'production'
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix replace MODE: multiple custom prefix replace MODE 1`] = `
+
+const x = import.meta.env.MODE
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.NODE_ENV || 'test'
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix replace NODE_ENV: multiple custom prefix replace NODE_ENV 1`] = `
+
+const x = import.meta.env.NODE_ENV
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.NODE_ENV || 'test'
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix replace PROD: multiple custom prefix replace PROD 1`] = `
+
+const x = import.meta.env.PROD
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.NODE_ENV === 'production'
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix replace TEST_PREFIX_A_* variables: multiple custom prefix replace TEST_PREFIX_A_* variables 1`] = `
+
+const x = import.meta.env.TEST_PREFIX_A_VAR
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.TEST_PREFIX_A_VAR
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix replace TEST_PREFIX_B_* variables: multiple custom prefix replace TEST_PREFIX_B_* variables 1`] = `
+
+const x = import.meta.env.TEST_PREFIX_B_VAR
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = process.env.TEST_PREFIX_B_VAR
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix replace env object: multiple custom prefix replace env object 1`] = `
+
+const env = import.meta.env
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const env = {
+  ...Object.fromEntries(
+    Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_A_'))
+  ),
+  ...Object.fromEntries(
+    Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_B_'))
+  ),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix replace key access A: multiple custom prefix replace key access A 1`] = `
+
+const key = "TEST_PREFIX_A_VAR"; const x = import.meta.env[key]
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const key = 'TEST_PREFIX_A_VAR'
+const x = {
+  ...Object.fromEntries(
+    Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_A_'))
+  ),
+  ...Object.fromEntries(
+    Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_B_'))
+  ),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}[key]
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix replace key access B: multiple custom prefix replace key access B 1`] = `
+
+const key = "TEST_PREFIX_B_VAR"; const x = import.meta.env[key]
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const key = 'TEST_PREFIX_B_VAR'
+const x = {
+  ...Object.fromEntries(
+    Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_A_'))
+  ),
+  ...Object.fromEntries(
+    Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_B_'))
+  ),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}[key]
+
+
+`;
+
+exports[`vite-meta-env multiple custom prefix replace string access: multiple custom prefix replace string access 1`] = `
+
+const x = import.meta.env["TEST_PREFIX_A"]
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = {
+  ...Object.fromEntries(
+    Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_A_'))
+  ),
+  ...Object.fromEntries(
+    Object.entries(process.env).filter(([k]) => k.startsWith('TEST_PREFIX_B_'))
+  ),
+  NODE_ENV: process.env.NODE_ENV || 'test',
+  MODE: process.env.NODE_ENV || 'test',
+  BASE_URL: '/',
+  DEV: process.env.NODE_ENV !== 'production',
+  PROD: process.env.NODE_ENV === 'production'
+}['TEST_PREFIX_A']
+
+
+`;
+
 exports[`vite-meta-env not import.meta lookup: not import.meta lookup 1`] = `
 
 const x = import.meta()
