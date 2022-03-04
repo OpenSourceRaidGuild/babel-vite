@@ -97,6 +97,21 @@ The plugin may also be configured to transforming environmental variables with a
 
 **Note**: If an empty string is supplied, all environmental variables will be transformed.
 
+Multiple custom prefixes may be configured:
+
+```json
+{
+  "plugins": [    
+    [
+      "babel-plugin-transform-vite-meta-env", 
+      { 
+        "prefix": ["REACT_APP_", "VITE_APP_"]
+      }
+    ]
+  ]
+}
+```
+
 ### Via CLI
 
 ```sh
