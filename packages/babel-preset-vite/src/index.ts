@@ -10,24 +10,27 @@ function vitePreset(
   _: typeof babelCore,
   opts: VitePresetOptions
 ): { plugins: babelCore.PluginItem[] } {
-  opts.env
   const { env = true, glob = true } = opts
 
-  const plugins: babelCore.PluginItem[] = []
-
-  if (env) {
-    if (typeof env === 'object') {
-      plugins.push([require.resolve('babel-plugin-transform-vite-meta-env'), env])
-    } else {
-      plugins.push(require.resolve('babel-plugin-transform-vite-meta-env'))
-    }
-  }
-
-  if (glob) {
-    plugins.push(require.resolve('babel-plugin-transform-vite-meta-glob'))
-  }
+  const plugins = [
+    env && vitMetaEnvTransformPlugin(env),
+    glob && vitMetaGlobTransformPlugin()
+  ].filter(isEnabled)
 
   return { plugins }
+}
+
+function vitMetaEnvTransformPlugin(options: true | ViteMetaEnvPluginOptions): babelCore.PluginItem {
+  const pluginPath = require.resolve('babel-plugin-transform-vite-meta-env')
+  return typeof options === 'object' ? [pluginPath, options] : pluginPath
+}
+
+function vitMetaGlobTransformPlugin(): babelCore.PluginItem {
+  return require.resolve('babel-plugin-transform-vite-meta-glob')
+}
+
+function isEnabled(plugin: babelCore.PluginItem | false): plugin is babelCore.PluginItem {
+  return plugin !== false
 }
 
 export default vitePreset
