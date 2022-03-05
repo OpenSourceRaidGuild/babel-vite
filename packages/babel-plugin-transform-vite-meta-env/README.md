@@ -74,7 +74,7 @@ npm install --save-dev babel-plugin-transform-vite-meta-env
 
 ### With a configuration file (Recommended)
 
-The plugin defaults to transforming environmental variables prefixed with `VITE_`.
+Without options:
 
 ```json
 {
@@ -82,30 +82,15 @@ The plugin defaults to transforming environmental variables prefixed with `VITE_
 }
 ```
 
-The plugin may also be configured to transforming environmental variables with a custom prefix.
+With options:
 
-```json
+```jsonc
 {
-  "plugins": [    
+  "plugins": [
     [
-      "babel-plugin-transform-vite-meta-env", 
-      { "prefix": "REACT_APP_" }
-    ]
-  ]
-}
-```
-
-**Note**: If an empty string is supplied, all environmental variables will be transformed.
-
-Multiple custom prefixes may be configured:
-
-```json
-{
-  "plugins": [    
-    [
-      "babel-plugin-transform-vite-meta-env", 
-      { 
-        "prefix": ["REACT_APP_", "VITE_APP_"]
+      "babel-plugin-transform-vite-meta-env",
+      {
+        "prefix": "CUSTOM_" // defaults to "VITE_"
       }
     ]
   ]
@@ -125,3 +110,14 @@ require('@babel/core').transformSync('code', {
   plugins: ['babel-plugin-transform-vite-meta-env']
 })
 ```
+
+## Options
+
+### `envPrefix`
+
+`string | string[]`, defaults to `VITE_`
+
+Sets the filter prefix for the transformation to a custom prefix (or prefixes). This will generally
+be set to match the (envPrefix)[https://vitejs.dev/config/#envprefix] in your vite config.
+
+**Note:** If an empty string is supplied, all environmental variables will be transformed.

@@ -79,10 +79,13 @@ require('@babel/core').transformSync('code', {
 
 ### `env`
 
-`boolean`, defaults to `true`
+`boolean | object`, defaults to `true`
 
 Toggles whether or not to perform
 [`import.meta.env`](https://vitejs.dev/guide/env-and-mode.html#env-variables) transformations.
+
+If you pass an object here, you can set any of the options for
+[babel-plugin-transform-vite-meta-env](../babel-plugin-transform-vite-meta-env#options).
 
 ### `glob`
 

@@ -26,7 +26,7 @@ pluginTester({
   plugin,
   pluginName: 'vite-meta-env',
   pluginOptions: {
-    prefix: 'TEST_PREFIX_'
+    envPrefix: 'TEST_PREFIX_'
   },
   snapshot: true,
   tests: {
@@ -52,7 +52,7 @@ pluginTester({
   plugin,
   pluginName: 'vite-meta-env',
   pluginOptions: {
-    prefix: ['TEST_PREFIX_A_', 'TEST_PREFIX_B_']
+    envPrefix: ['TEST_PREFIX_A_', 'TEST_PREFIX_B_']
   },
   snapshot: true,
   tests: {

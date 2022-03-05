@@ -1,7 +1,8 @@
 import type babelCore from '@babel/core'
+import type { ViteMetaEnvPluginOptions } from 'babel-plugin-transform-vite-meta-env'
 
 export interface VitePresetOptions {
-  env?: boolean
+  env?: boolean | ViteMetaEnvPluginOptions
   glob?: boolean
 }
 
@@ -9,17 +10,24 @@ function vitePreset(
   _: typeof babelCore,
   opts: VitePresetOptions
 ): { plugins: babelCore.PluginItem[] } {
+  opts.env
   const { env = true, glob = true } = opts
-  return {
-    plugins: [
-      glob && require.resolve('babel-plugin-transform-vite-meta-glob'),
-      env && require.resolve('babel-plugin-transform-vite-meta-env')
-    ].filter(isEnabled)
-  }
-}
 
-function isEnabled(plugin: string | false): plugin is string {
-  return plugin !== false
+  const plugins: babelCore.PluginItem[] = []
+
+  if (env) {
+    if (typeof env === 'object') {
+      plugins.push([require.resolve('babel-plugin-transform-vite-meta-env'), env])
+    } else {
+      plugins.push(require.resolve('babel-plugin-transform-vite-meta-env'))
+    }
+  }
+
+  if (glob) {
+    plugins.push(require.resolve('babel-plugin-transform-vite-meta-glob'))
+  }
+
+  return { plugins }
 }
 
 export default vitePreset

@@ -1,6 +1,10 @@
 import type babelCore from '@babel/core'
 
-const defaultPrefix = 'VITE_'
+export type ViteMetaEnvPluginOptions = {
+  envPrefix?: string | string[]
+}
+
+const DEFAULT_ENV_PREFIX = 'VITE_'
 
 const replaceVars = [
   {
@@ -24,14 +28,14 @@ const replaceVars = [
   }
 ]
 
-const getPrefixes = ({ prefix }: { prefix?: unknown }): string[] => {
-  if (typeof prefix === 'string') {
-    return [prefix]
+const getPrefixes = ({ envPrefix }: ViteMetaEnvPluginOptions): string[] => {
+  if (typeof envPrefix === 'string') {
+    return [envPrefix]
   }
-  if (Array.isArray(prefix)) {
-    return prefix.map((val) => `${val}`)
+  if (Array.isArray(envPrefix)) {
+    return envPrefix
   }
-  return [defaultPrefix]
+  return [DEFAULT_ENV_PREFIX]
 }
 
 const replaceEnv = (template: typeof babelCore.template, prefixes: string[]) => {
@@ -70,7 +74,9 @@ function getReplacement(
 export default function viteMetaEnvBabelPlugin({
   template,
   types: t
-}: typeof babelCore): babelCore.PluginObj {
+}: typeof babelCore): babelCore.PluginObj<
+  babelCore.PluginPass & { opts: ViteMetaEnvPluginOptions }
+> {
   return {
     name: 'vite-meta-env',
     visitor: {

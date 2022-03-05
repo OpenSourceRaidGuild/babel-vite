@@ -17,6 +17,7 @@ pluginTester({
     defaults: fixture('input'),
     all: fixture('input', { env: true, glob: true }),
     'env-only': fixture('input', { env: true, glob: false }),
-    'glob-only': fixture('input', { env: false, glob: true })
+    'glob-only': fixture('input', { env: false, glob: true }),
+    'custom-env-config': fixture('input', { env: { envPrefix: 'TEST_PREFIX_' }, glob: true })
   }
 })
