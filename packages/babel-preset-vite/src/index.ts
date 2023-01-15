@@ -3,17 +3,19 @@ import type babelCore from '@babel/core'
 export interface VitePresetOptions {
   env?: boolean
   glob?: boolean
+  hot?: boolean
 }
 
 function vitePreset(
   _: typeof babelCore,
   opts: VitePresetOptions
 ): { plugins: babelCore.PluginItem[] } {
-  const { env = true, glob = true } = opts
+  const { env = true, glob = true, hot = true } = opts
   return {
     plugins: [
       glob && require.resolve('babel-plugin-transform-vite-meta-glob'),
-      env && require.resolve('babel-plugin-transform-vite-meta-env')
+      env && require.resolve('babel-plugin-transform-vite-meta-env'),
+      hot && require.resolve('babel-plugin-transform-vite-meta-hot')
     ].filter(isEnabled)
   }
 }

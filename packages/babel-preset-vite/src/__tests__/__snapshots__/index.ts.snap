@@ -8,6 +8,8 @@ export const modules = import.meta.glob('files/*.ts')
 
 export const eagerModules = import.meta.globEager('files/*.ts')
 
+export const hot = import.meta.hot
+
       ↓ ↓ ↓ ↓ ↓ ↓
 
 export const envVar = process.env.VITE_VAR
@@ -17,6 +19,7 @@ export const modules = {
 export const eagerModules = {
   'files/file1.ts': require('files/file1.ts')
 }
+export const hot = module.hot
 
 
 `;
@@ -29,6 +32,8 @@ export const modules = import.meta.glob('files/*.ts')
 
 export const eagerModules = import.meta.globEager('files/*.ts')
 
+export const hot = import.meta.hot
+
       ↓ ↓ ↓ ↓ ↓ ↓
 
 export const envVar = process.env.VITE_VAR
@@ -38,6 +43,7 @@ export const modules = {
 export const eagerModules = {
   'files/file1.ts': require('files/file1.ts')
 }
+export const hot = module.hot
 
 
 `;
@@ -50,11 +56,14 @@ export const modules = import.meta.glob('files/*.ts')
 
 export const eagerModules = import.meta.globEager('files/*.ts')
 
+export const hot = import.meta.hot
+
       ↓ ↓ ↓ ↓ ↓ ↓
 
 export const envVar = process.env.VITE_VAR
 export const modules = import.meta.glob('files/*.ts')
 export const eagerModules = import.meta.globEager('files/*.ts')
+export const hot = import.meta.hot
 
 
 `;
@@ -67,6 +76,8 @@ export const modules = import.meta.glob('files/*.ts')
 
 export const eagerModules = import.meta.globEager('files/*.ts')
 
+export const hot = import.meta.hot
+
       ↓ ↓ ↓ ↓ ↓ ↓
 
 export const envVar = import.meta.env.VITE_VAR
@@ -76,6 +87,27 @@ export const modules = {
 export const eagerModules = {
   'files/file1.ts': require('files/file1.ts')
 }
+export const hot = import.meta.hot
+
+
+`;
+
+exports[`vite hot-only: hot-only 1`] = `
+
+export const envVar = import.meta.env.VITE_VAR
+
+export const modules = import.meta.glob('files/*.ts')
+
+export const eagerModules = import.meta.globEager('files/*.ts')
+
+export const hot = import.meta.hot
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+export const envVar = import.meta.env.VITE_VAR
+export const modules = import.meta.glob('files/*.ts')
+export const eagerModules = import.meta.globEager('files/*.ts')
+export const hot = module.hot
 
 
 `;

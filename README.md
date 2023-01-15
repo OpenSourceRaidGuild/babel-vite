@@ -24,6 +24,7 @@ This repo includes the following presets and plugins:
 - [babel-preset-vite](./packages/babel-preset-vite)
   - [babel-plugin-transform-vite-meta-env](./packages/babel-plugin-transform-vite-meta-env)
   - [babel-plugin-transform-vite-meta-glob](./packages/babel-plugin-transform-vite-meta-glob)
+  - [babel-plugin-transform-vite-meta-hot](./packages/babel-plugin-transform-vite-meta-hot)
 
 For installation, usage and example, please refer to the documentation in the above packages.
 

@@ -15,8 +15,9 @@ pluginTester({
   babelOptions: { filename: __filename },
   tests: {
     defaults: fixture('input'),
-    all: fixture('input', { env: true, glob: true }),
-    'env-only': fixture('input', { env: true, glob: false }),
-    'glob-only': fixture('input', { env: false, glob: true })
+    all: fixture('input', { env: true, glob: true, hot: true }),
+    'env-only': fixture('input', { env: true, glob: false, hot: false }),
+    'glob-only': fixture('input', { env: false, glob: true, hot: false }),
+    'hot-only': fixture('input', { env: false, glob: false, hot: true })
   }
 })

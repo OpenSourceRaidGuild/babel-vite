@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vite-meta-hot not import.meta lookup: not import.meta lookup 1`] = `
+
+const x = import.meta()
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = import.meta()
+
+
+`;
+
+exports[`vite-meta-hot not replace import.meta.hot: not replace import.meta.hot 1`] = `
+
+const x = module.hot
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = module.hot
+
+
+`;
+
+exports[`vite-meta-hot not replace key access: not replace key access 1`] = `
+
+const key = "env"; const x = import.meta[key]
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const key = 'env'
+const x = import.meta[key]
+
+
+`;
+
+exports[`vite-meta-hot not replace string access: not replace string access 1`] = `
+
+const x = import.meta["env"]
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = import.meta['env']
+
+
+`;
+
+exports[`vite-meta-hot not replaceable: not replaceable 1`] = `
+
+const x = import.meta.other
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = import.meta.other
+
+
+`;
+
+exports[`vite-meta-hot replace import.meta.hot: replace import.meta.hot 1`] = `
+
+const x = import.meta.hot
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = module.hot
+
+
+`;
+
+exports[`vite-meta-hot replace key access: replace key access 1`] = `
+
+const key = "hot"; const x = import.meta[key]
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const key = 'hot'
+const x = module.hot
+
+
+`;
+
+exports[`vite-meta-hot replace string access: replace string access 1`] = `
+
+const x = import.meta["hot"]
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const x = module.hot
+
+
+`;
