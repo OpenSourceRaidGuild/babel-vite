@@ -18,7 +18,7 @@
     "plugin",
     "import",
     "meta",
-    "env"
+    "hot"
   ],
   "author": "Kelvin Zhang <me@kelvinzhang.ca>",
   "license": "MIT",
