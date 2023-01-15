@@ -42,6 +42,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/MohitPopli"><img src="https://avatars.githubusercontent.com/u/17976072?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mohit</b></sub></a><br /><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=MohitPopli" title="Code">💻</a></td>
     <td align="center"><a href="https://rubenmoya.dev/"><img src="https://avatars.githubusercontent.com/u/905225?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rubén Moya</b></sub></a><br /><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=rubenmoya" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/mitchelvanbever"><img src="https://avatars.githubusercontent.com/u/10127707?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mitchel van Bever</b></sub></a><br /><a href="#ideas-mitchelvanbever" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://kelvinzhang.com/"><img src="https://avatars.githubusercontent.com/u/9621004?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kelvin Zhang</b></sub></a><br /><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=0kzh" title="Code">💻</a><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=0kzh" title="Tests">⚠️</a> <a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=0kzh" title="Documentation">📖</a></td>
   </tr>
 </table>
 

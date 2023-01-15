@@ -15,7 +15,10 @@
   "keywords": [
     "babel",
     "vite",
-    "preset"
+    "preset",
+    "env",
+    "glob",
+    "hot"
   ],
   "author": "Michael Peyper <mpeyper7@gmail.com>",
   "license": "MIT",
