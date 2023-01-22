@@ -26,6 +26,7 @@ This preset includes the following plugins:
 
 - [babel-plugin-transform-vite-meta-env](../babel-plugin-transform-vite-meta-env)
 - [babel-plugin-transform-vite-meta-glob](../babel-plugin-transform-vite-meta-glob)
+- [babel-plugin-transform-vite-meta-hot](../babel-plugin-transform-vite-meta-hot)
 
 ## Installation
 
@@ -54,7 +55,8 @@ With options:
       "babel-preset-vite",
       {
         "env": false, // defaults to true
-        "glob": false // defaults to true
+        "glob": false, // defaults to true
+        "hot": false // defaults to true
       }
     ]
   ]
@@ -90,6 +92,13 @@ Toggles whether or not to perform
 
 Toggles whether or not to perform
 [`import.meta.glob` and `import.meta.globEager`](https://vitejs.dev/guide/features.html#glob-import)
+transformations.
+
+### `hot`
+
+`boolean`, defaults to `true`
+
+Toggles whether or not to perform [`import.meta.hot`](https://vitejs.dev/guide/api-hmr.html)
 transformations.
 
 > You can read more about configuring preset options

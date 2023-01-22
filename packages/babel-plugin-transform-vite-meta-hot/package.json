@@ -1,7 +1,7 @@
 {
-  "name": "babel-preset-vite",
+  "name": "babel-plugin-transform-vite-meta-hot",
   "version": "0.0.0-semantically-released",
-  "description": "babel preset that emulates vite's non-standard functionality",
+  "description": "babel plugin that emulates vite's import.meta.hot functionality",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -15,12 +15,12 @@
   "keywords": [
     "babel",
     "vite",
-    "preset",
-    "env",
-    "glob",
+    "plugin",
+    "import",
+    "meta",
     "hot"
   ],
-  "author": "Michael Peyper <mpeyper7@gmail.com>",
+  "author": "Kelvin Zhang <me@kelvinzhang.ca>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/OpenSourceRaidGuild/babel-vite/issues"
@@ -39,9 +39,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.13.9",
-    "@types/babel__core": "^7.1.12",
-    "babel-plugin-transform-vite-meta-env": "^0.0.0-semantically-released",
-    "babel-plugin-transform-vite-meta-glob": "^0.0.0-semantically-released",
-    "babel-plugin-transform-vite-meta-hot": "^0.0.0-semantically-released"
+    "@types/babel__core": "^7.1.12"
   }
 }
