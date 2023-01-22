@@ -35,7 +35,7 @@
     "@babel/core": "^7.13.8",
     "@types/babel-plugin-tester": "^9.0.1",
     "@types/glob": "^8.0.1",
-    "babel-plugin-tester": "^10.0.0",
+    "babel-plugin-tester": "^11.0.1",
     "kcd-scripts": "^12.0.0",
     "typescript": "^4.2.2"
   },
