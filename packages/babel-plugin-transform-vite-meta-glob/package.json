@@ -37,7 +37,7 @@
     "@types/glob": "^8.0.1",
     "babel-plugin-tester": "^10.0.0",
     "kcd-scripts": "^13.0.0",
-    "typescript": "^4.2.2"
+    "typescript": "^5.0.2"
   },
   "dependencies": {
     "@babel/runtime": "^7.13.9",
