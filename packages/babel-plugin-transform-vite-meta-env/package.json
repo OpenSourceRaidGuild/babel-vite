@@ -33,7 +33,7 @@
   "devDependencies": {
     "@babel/core": "^7.13.8",
     "@types/babel-plugin-tester": "^9.0.1",
-    "babel-plugin-tester": "^10.0.0",
+    "babel-plugin-tester": "^11.0.4",
     "kcd-scripts": "^13.0.0",
     "typescript": "^5.0.3"
   },
