@@ -42,6 +42,6 @@
   "dependencies": {
     "@babel/runtime": "^7.13.9",
     "@types/babel__core": "^7.1.12",
-    "glob": "^8.0.1"
+    "glob": "^10.3.1"
   }
 }
