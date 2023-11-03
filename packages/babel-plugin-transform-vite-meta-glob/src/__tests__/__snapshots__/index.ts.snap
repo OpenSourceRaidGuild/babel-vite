@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`vite-meta-glob glob all files eagerly, with { eager: true }: glob all files eagerly, with { eager: true } 1`] = `
+
+const modules = import.meta.glob("./fixtures/**/*", { eager: true })
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import * as __glob__0_0 from './fixtures/file1.ts'
+import * as __glob__0_1 from './fixtures/file2.ts'
+import * as __glob__0_2 from './fixtures/file3.ts'
+const modules = {
+  './fixtures/file1.ts': __glob__0_0,
+  './fixtures/file2.ts': __glob__0_1,
+  './fixtures/file3.ts': __glob__0_2
+}
+
+
+`;
+
 exports[`vite-meta-glob glob all files eagerly: glob all files eagerly 1`] = `
 
 const modules = import.meta.globEager("./fixtures/**/*")
@@ -10,6 +28,21 @@ const modules = {
   './fixtures/file1.ts': require('./fixtures/file1.ts'),
   './fixtures/file2.ts': require('./fixtures/file2.ts'),
   './fixtures/file3.ts': require('./fixtures/file3.ts')
+}
+
+
+`;
+
+exports[`vite-meta-glob glob all files normally, with { eager: false }: glob all files normally, with { eager: false } 1`] = `
+
+const modules = import.meta.glob("./fixtures/**/*", { eager: false })
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const modules = {
+  './fixtures/file1.ts': () => import('./fixtures/file1.ts'),
+  './fixtures/file2.ts': () => import('./fixtures/file2.ts'),
+  './fixtures/file3.ts': () => import('./fixtures/file3.ts')
 }
 
 
@@ -30,9 +63,31 @@ const modules = {
 
 `;
 
+exports[`vite-meta-glob glob no files eagerly, with { eager: true }: glob no files eagerly, with { eager: true } 1`] = `
+
+const modules = import.meta.glob("./fixtures/**/not-found", { eager: true })
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const modules = {}
+
+
+`;
+
 exports[`vite-meta-glob glob no files eagerly: glob no files eagerly 1`] = `
 
 const modules = import.meta.globEager("./fixtures/**/not-found")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const modules = {}
+
+
+`;
+
+exports[`vite-meta-glob glob no files normally, with { eager: false }: glob no files normally, with { eager: false } 1`] = `
+
+const modules = import.meta.glob("./fixtures/**/not-found", { eager: false })
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
@@ -52,6 +107,22 @@ const modules = {}
 
 `;
 
+exports[`vite-meta-glob glob some files eagerly, with { eager: true }: glob some files eagerly, with { eager: true } 1`] = `
+
+const modules = import.meta.glob("./fixtures/**/*{1,3}*", { eager: true })
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import * as __glob__0_0 from './fixtures/file1.ts'
+import * as __glob__0_1 from './fixtures/file3.ts'
+const modules = {
+  './fixtures/file1.ts': __glob__0_0,
+  './fixtures/file3.ts': __glob__0_1
+}
+
+
+`;
+
 exports[`vite-meta-glob glob some files eagerly: glob some files eagerly 1`] = `
 
 const modules = import.meta.globEager("./fixtures/**/*{1,3}*")
@@ -61,6 +132,20 @@ const modules = import.meta.globEager("./fixtures/**/*{1,3}*")
 const modules = {
   './fixtures/file1.ts': require('./fixtures/file1.ts'),
   './fixtures/file3.ts': require('./fixtures/file3.ts')
+}
+
+
+`;
+
+exports[`vite-meta-glob glob some files normally, with { eager: false }: glob some files normally, with { eager: false } 1`] = `
+
+const modules = import.meta.glob("./fixtures/**/*{1,3}*", { eager: false })
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const modules = {
+  './fixtures/file1.ts': () => import('./fixtures/file1.ts'),
+  './fixtures/file3.ts': () => import('./fixtures/file3.ts')
 }
 
 
@@ -80,6 +165,56 @@ const modules = {
 
 `;
 
+exports[`vite-meta-glob glob with non-boolean eager option: glob with non-boolean eager option 1`] = `
+
+const modules = import.meta.glob("./fixtures/**/*", { eager: 11 })
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const modules = import.meta.glob('./fixtures/**/*', {
+  eager: 11
+})
+
+
+`;
+
+exports[`vite-meta-glob glob with non-object options: glob with non-object options 1`] = `
+
+const modules = import.meta.glob("./fixtures/**/*", true)
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const modules = import.meta.glob('./fixtures/**/*', true)
+
+
+`;
+
+exports[`vite-meta-glob no filename, with { eager: false }: no filename, with { eager: false } 1`] = `
+
+import.meta.glob("./fixtures/**/*", { eager: false })
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import.meta.glob('./fixtures/**/*', {
+  eager: false
+})
+
+
+`;
+
+exports[`vite-meta-glob no filename, with { eager: true }: no filename, with { eager: true } 1`] = `
+
+import.meta.glob("./fixtures/**/*", { eager: true })
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import.meta.glob('./fixtures/**/*', {
+  eager: true
+})
+
+
+`;
+
 exports[`vite-meta-glob no filename: no filename 1`] = `
 
 import.meta.glob("./fixtures/**/*")
@@ -87,6 +222,32 @@ import.meta.glob("./fixtures/**/*")
       ↓ ↓ ↓ ↓ ↓ ↓
 
 import.meta.glob('./fixtures/**/*')
+
+
+`;
+
+exports[`vite-meta-glob not a string arg, with { eager: false }: not a string arg, with { eager: false } 1`] = `
+
+const modules = import.meta.glob(12, { eager: false })
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const modules = import.meta.glob(12, {
+  eager: false
+})
+
+
+`;
+
+exports[`vite-meta-glob not a string arg, with { eager: true }: not a string arg, with { eager: true } 1`] = `
+
+const modules = import.meta.glob(12, { eager: true })
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const modules = import.meta.glob(12, {
+  eager: true
+})
 
 
 `;
