@@ -31,6 +31,36 @@ pluginTester({
     'not import.meta.globEager': withFileName('globEager("./fixtures/**/*")'),
     'not a string arg': withFileName('globEager(1)'),
     'too many args': withFileName('globEager("./fixtures/**/*1*", "./fixtures/**/*2*")'),
-    'no filename': 'import.meta.glob("./fixtures/**/*")'
+    'no filename': 'import.meta.glob("./fixtures/**/*")',
+    // ImportGlobOptions test cases
+    'glob all files eagerly, with { eager: true }': withFileName(
+      'const modules = import.meta.glob("./fixtures/**/*", { eager: true })'
+    ),
+    'glob some files eagerly, with { eager: true }': withFileName(
+      'const modules = import.meta.glob("./fixtures/**/*{1,3}*", { eager: true })'
+    ),
+    'glob no files eagerly, with { eager: true }': withFileName(
+      'const modules = import.meta.glob("./fixtures/**/not-found", { eager: true })'
+    ),
+    'glob all files normally, with { eager: false }': withFileName(
+      'const modules = import.meta.glob("./fixtures/**/*", { eager: false })'
+    ),
+    'glob some files normally, with { eager: false }': withFileName(
+      'const modules = import.meta.glob("./fixtures/**/*{1,3}*", { eager: false })'
+    ),
+    'glob no files normally, with { eager: false }': withFileName(
+      'const modules = import.meta.glob("./fixtures/**/not-found", { eager: false })'
+    ),
+    'glob with non-object options': 'const modules = import.meta.glob("./fixtures/**/*", true)',
+    'glob with non-boolean eager option':
+      'const modules = import.meta.glob("./fixtures/**/*", { eager: 11 })',
+    'not a string arg, with { eager: true }': withFileName(
+      'const modules = import.meta.glob(12, { eager: true })'
+    ),
+    'not a string arg, with { eager: false }': withFileName(
+      'const modules = import.meta.glob(12, { eager: false })'
+    ),
+    'no filename, with { eager: true }': 'import.meta.glob("./fixtures/**/*", { eager: true })',
+    'no filename, with { eager: false }': 'import.meta.glob("./fixtures/**/*", { eager: false })'
   }
 })
