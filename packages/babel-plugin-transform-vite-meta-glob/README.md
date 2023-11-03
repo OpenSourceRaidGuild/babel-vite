@@ -29,7 +29,11 @@
 ```js
 const modules = import.meta.glob('./path/to/files/**/*')
 
-const eagerModules = import.meta.globEager('./path/to/files/**/*')
+// eager
+const eagerModules = import.meta.glob('./path/to/files/**/*', { eager: true })
+
+// deprecated eager
+const deprecatedEagerModules = import.meta.globEager('./path/to/files/**/*')
 ```
 
 **Out**
@@ -44,7 +48,18 @@ const modules = {
   './path/to/files/file3.js': () => import(('./path/to/files/file3.js')
 }
 
-const eagerModules = {
+// eager
+import * as __glob__0_0 from './path/to/files/file1.js'
+import * as __glob__0_1 from './path/to/files/file2.js'
+import * as __glob__0_2 from './path/to/files/file3.js'
+const eagerModules =  {
+  './path/to/files/file1.js': __glob__0_1,
+  './path/to/files/file2.js': __glob__0_2,
+  './path/to/files/file3.js': __glob__0_3
+}
+
+// deprecated eager
+const deprecatedEagerModules = {
   './path/to/files/file1.js': require('./path/to/files/file1.js'),
   './path/to/files/file2.js': require('./path/to/files/file2.js'),
   './path/to/files/file3.js': require('./path/to/files/file3.js')
