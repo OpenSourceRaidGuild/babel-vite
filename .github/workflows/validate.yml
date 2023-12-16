@@ -24,7 +24,7 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: 15
+          node-version: 20
 
       - name: 📥 Download deps
         uses: bahmutov/npm-install@v1
@@ -58,7 +58,7 @@ jobs:
       - name: ⎔ Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: 15
+          node-version: 20
 
       - name: 📥 Download deps
         uses: bahmutov/npm-install@v1
