@@ -71,7 +71,7 @@ jobs:
         run: npm run build
 
       - name: 🚀 Release
-        run: npx multi-semantic-release
+        run: npx multi-semantic-release --sequential-init	--sequential-prepare
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
