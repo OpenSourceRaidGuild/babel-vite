@@ -14,10 +14,10 @@ export const hot = import.meta.hot
 
 export const envVar = process.env.VITE_VAR
 export const modules = {
-  'files/file1.ts': () => import('files/file1.ts')
+  './files/file1.ts': () => import('./files/file1.ts')
 }
 export const eagerModules = {
-  'files/file1.ts': require('files/file1.ts')
+  './files/file1.ts': require('./files/file1.ts')
 }
 export const hot = module.hot
 
@@ -38,10 +38,10 @@ export const hot = import.meta.hot
 
 export const envVar = process.env.VITE_VAR
 export const modules = {
-  'files/file1.ts': () => import('files/file1.ts')
+  './files/file1.ts': () => import('./files/file1.ts')
 }
 export const eagerModules = {
-  'files/file1.ts': require('files/file1.ts')
+  './files/file1.ts': require('./files/file1.ts')
 }
 export const hot = module.hot
 
@@ -82,10 +82,10 @@ export const hot = import.meta.hot
 
 export const envVar = import.meta.env.VITE_VAR
 export const modules = {
-  'files/file1.ts': () => import('files/file1.ts')
+  './files/file1.ts': () => import('./files/file1.ts')
 }
 export const eagerModules = {
-  'files/file1.ts': require('files/file1.ts')
+  './files/file1.ts': require('./files/file1.ts')
 }
 export const hot = import.meta.hot
 
