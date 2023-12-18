@@ -1,6 +1,6 @@
 import nodePath from 'path'
 import type babelCore from '@babel/core'
-import glob from 'glob'
+import { globSync } from 'glob'
 
 export default function viteMetaGlobBabelPlugin({
   types: t
@@ -42,7 +42,7 @@ export default function viteMetaGlobBabelPlugin({
           t.isStringLiteral(args[0])
         ) {
           const cwd = nodePath.dirname(sourceFile)
-          const globPaths = glob.sync(args[0].value, { cwd })
+          const globPaths = globSync(args[0].value, { cwd, dotRelative: true }).sort()
 
           const replacement = t.objectExpression(
             globPaths.map((globPath) =>
@@ -85,7 +85,7 @@ export default function viteMetaGlobBabelPlugin({
           t.isBooleanLiteral(eagerOption[0].value)
         ) {
           const cwd = nodePath.dirname(sourceFile)
-          const globPaths = glob.sync(args[0].value, { cwd })
+          const globPaths = globSync(args[0].value, { cwd, dotRelative: true }).sort()
 
           if (eagerOption[0].value.value) {
             const identifiers = globPaths.map((_, idx) => t.identifier(`__glob__0_${idx}`))
