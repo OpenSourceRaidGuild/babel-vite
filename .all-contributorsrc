@@ -56,7 +56,16 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "vctqs1",
+      "name": "vctqs1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30227910?v=4",
+      "profile": "https://github.com/vctqs1",
+      "contributions": [
+        "code"
+      ]
     }
   ],
-  "contributorsPerLine": 7
+  "contributorsPerLine": 8
 }
