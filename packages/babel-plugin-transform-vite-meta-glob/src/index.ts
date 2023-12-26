@@ -91,9 +91,7 @@ export default function viteMetaGlobBabelPlugin({
             const identifiers = globPaths.map((_, idx) => t.identifier(`__glob__0_${idx}`))
 
             const imports = globPaths.map((globPath, idx) => {
-              // const specifier = t.importNamespaceSpecifier(identifiers[idx])
               const modulePath = t.stringLiteral(globPath)
-              // return t.importDeclaration([specifier], modulePath)
               return t.variableDeclaration('const', [
                 t.variableDeclarator(
                   identifiers[idx],
