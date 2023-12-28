@@ -36,14 +36,16 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://github.com/mpeyper"><img src="https://avatars.githubusercontent.com/u/23029903?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Michael Peyper</b></sub></a><br /><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=mpeyper" title="Code">💻</a> <a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=mpeyper" title="Tests">⚠️</a> <a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=mpeyper" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/nobrayner"><img src="https://avatars.githubusercontent.com/u/40751395?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Braydon Hall</b></sub></a><br /><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=nobrayner" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/MohitPopli"><img src="https://avatars.githubusercontent.com/u/17976072?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mohit</b></sub></a><br /><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=MohitPopli" title="Code">💻</a></td>
-    <td align="center"><a href="https://rubenmoya.dev/"><img src="https://avatars.githubusercontent.com/u/905225?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rubén Moya</b></sub></a><br /><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=rubenmoya" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/mitchelvanbever"><img src="https://avatars.githubusercontent.com/u/10127707?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mitchel van Bever</b></sub></a><br /><a href="#ideas-mitchelvanbever" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://kelvinzhang.com/"><img src="https://avatars.githubusercontent.com/u/9621004?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kelvin Zhang</b></sub></a><br /><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=0kzh" title="Code">💻</a><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=0kzh" title="Tests">⚠️</a> <a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=0kzh" title="Documentation">📖</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="12.5%"><a href="https://github.com/mpeyper"><img src="https://avatars.githubusercontent.com/u/23029903?v=4?s=100" width="100px;" alt="Michael Peyper"/><br /><sub><b>Michael Peyper</b></sub></a><br /><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=mpeyper" title="Code">💻</a> <a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=mpeyper" title="Tests">⚠️</a> <a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=mpeyper" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="12.5%"><a href="https://github.com/nobrayner"><img src="https://avatars.githubusercontent.com/u/40751395?v=4?s=100" width="100px;" alt="Braydon Hall"/><br /><sub><b>Braydon Hall</b></sub></a><br /><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=nobrayner" title="Code">💻</a></td>
+      <td align="center" valign="top" width="12.5%"><a href="https://github.com/MohitPopli"><img src="https://avatars.githubusercontent.com/u/17976072?v=4?s=100" width="100px;" alt="Mohit"/><br /><sub><b>Mohit</b></sub></a><br /><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=MohitPopli" title="Code">💻</a></td>
+      <td align="center" valign="top" width="12.5%"><a href="https://rubenmoya.dev/"><img src="https://avatars.githubusercontent.com/u/905225?v=4?s=100" width="100px;" alt="Rubén Moya"/><br /><sub><b>Rubén Moya</b></sub></a><br /><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=rubenmoya" title="Code">💻</a></td>
+      <td align="center" valign="top" width="12.5%"><a href="https://github.com/mitchelvanbever"><img src="https://avatars.githubusercontent.com/u/10127707?v=4?s=100" width="100px;" alt="Mitchel van Bever"/><br /><sub><b>Mitchel van Bever</b></sub></a><br /><a href="#ideas-mitchelvanbever" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="12.5%"><a href="https://github.com/vctqs1"><img src="https://avatars.githubusercontent.com/u/30227910?v=4?s=100" width="100px;" alt="vctqs1"/><br /><sub><b>vctqs1</b></sub></a><br /><a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=vctqs1" title="Code">💻</a> <a href="https://github.com/OpenSourceRaidGuild/babel-vite/commits?author=vctqs1" title="Documentation">📖</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->
