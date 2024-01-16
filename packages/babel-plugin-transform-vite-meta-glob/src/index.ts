@@ -42,7 +42,9 @@ export default function viteMetaGlobBabelPlugin({
           t.isStringLiteral(args[0])
         ) {
           const cwd = nodePath.dirname(sourceFile)
-          const globPaths = globSync(args[0].value, { cwd, dotRelative: true }).sort()
+          const globPaths = globSync(args[0].value, { cwd, dotRelative: true })
+            .sort()
+            .map((globPath) => globPath.replace(/\\/g, '/'))
 
           const replacement = t.objectExpression(
             globPaths.map((globPath) =>
@@ -85,7 +87,9 @@ export default function viteMetaGlobBabelPlugin({
           t.isBooleanLiteral(eagerOption[0].value)
         ) {
           const cwd = nodePath.dirname(sourceFile)
-          const globPaths = globSync(args[0].value, { cwd, dotRelative: true }).sort()
+          const globPaths = globSync(args[0].value, { cwd, dotRelative: true })
+            .sort()
+            .map((globPath) => globPath.replace(/\\/g, '/'))
 
           if (eagerOption[0].value.value) {
             const identifiers = globPaths.map((_, idx) => t.identifier(`__glob__0_${idx}`))
@@ -97,7 +101,7 @@ export default function viteMetaGlobBabelPlugin({
                   identifiers[idx],
                   t.callExpression(t.identifier('require'), [modulePath])
                 )
-              ]);
+              ])
             })
 
             const variable = t.variableDeclaration('const', [
