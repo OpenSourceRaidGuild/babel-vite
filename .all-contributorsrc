@@ -3,9 +3,7 @@
   "projectOwner": "OpenSourceRaidGuild",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "files": [
-    "README.md"
-  ],
+  "files": ["README.md"],
   "imageSize": 100,
   "commit": false,
   "commitConvention": "none",
@@ -15,57 +13,51 @@
       "name": "Michael Peyper",
       "avatar_url": "https://avatars.githubusercontent.com/u/23029903?v=4",
       "profile": "https://github.com/mpeyper",
-      "contributions": [
-        "code",
-        "test",
-        "doc"
-      ]
+      "contributions": ["code", "test", "doc"]
     },
     {
       "login": "nobrayner",
       "name": "Braydon Hall",
       "avatar_url": "https://avatars.githubusercontent.com/u/40751395?v=4",
       "profile": "https://github.com/nobrayner",
-      "contributions": [
-        "code"
-      ]
+      "contributions": ["code"]
     },
     {
       "login": "MohitPopli",
       "name": "Mohit",
       "avatar_url": "https://avatars.githubusercontent.com/u/17976072?v=4",
       "profile": "https://github.com/MohitPopli",
-      "contributions": [
-        "code"
-      ]
+      "contributions": ["code"]
     },
     {
       "login": "rubenmoya",
       "name": "Rubén Moya",
       "avatar_url": "https://avatars.githubusercontent.com/u/905225?v=4",
       "profile": "https://rubenmoya.dev/",
-      "contributions": [
-        "code"
-      ]
+      "contributions": ["code"]
     },
     {
       "login": "mitchelvanbever",
       "name": "Mitchel van Bever",
       "avatar_url": "https://avatars.githubusercontent.com/u/10127707?v=4",
       "profile": "https://github.com/mitchelvanbever",
-      "contributions": [
-        "ideas"
-      ]
+      "contributions": ["ideas"]
     },
     {
       "login": "vctqs1",
       "name": "vctqs1",
       "avatar_url": "https://avatars.githubusercontent.com/u/30227910?v=4",
       "profile": "https://github.com/vctqs1",
-      "contributions": [
-        "code"
-      ]
+      "contributions": ["code"]
+    },
+    {
+      "login": "DesselBane",
+      "name": "DesselBane",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12199480?v=4",
+      "profile": "https://github.com/DesselBane",
+      "contributions": ["code"]
     }
   ],
   "contributorsPerLine": 8
 }
+
